@@ -4,6 +4,7 @@
 #include "../GameManager.h"
 #include "../Scenes/GameOverScene.h"
 #include "../Scenes/MenuScene.h"
+#include "../Scenes/StageScene.h"
 
 MenuItemCO& operator++(MenuItemCO& c)
 {
@@ -172,7 +173,10 @@ void GameOverScene::onMenuItemPress() {
     switch (currentSelectedMenu)
     {
     case MenuItemCO::ConfigurationWASD_space:
-        
+        /*gameManager->getSceneManager()->addScene("stage", std::make_shared<StageScene>(gameManager, MenuItemCO::ConfigurationWASD_space));*/
+        gameManager->getSceneManager()->activateScene("stage");
+        break;
+
         
         break;
     case MenuItemCO::Exit:
